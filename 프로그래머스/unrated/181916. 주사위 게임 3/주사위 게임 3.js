@@ -22,7 +22,7 @@ function solution(a, b, c, d) {
         }else if(a==d && b==c){
             return ((a+b)*Math.abs(a-b));
         }
-    }else{
+    }else{  //  두 주사위가 같은 값일 경우
         if(a==b){
             return c*d;
         }else if(a==c){
