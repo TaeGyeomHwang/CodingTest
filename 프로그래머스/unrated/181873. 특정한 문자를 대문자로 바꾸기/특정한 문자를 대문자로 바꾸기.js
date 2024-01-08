@@ -10,3 +10,10 @@ function solution(my_string, alp) {
     my_string = my_string_arr.join("");
     return my_string;
 }
+
+// function solution(my_string, alp) {
+//     if (!my_string.includes(alp)) {
+//         return my_string;
+//     }
+//     return my_string.replaceAll(alp, alp.toUpperCase());
+// }
