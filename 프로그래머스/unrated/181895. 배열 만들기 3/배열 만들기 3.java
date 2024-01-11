@@ -11,7 +11,6 @@ class Solution {
         int[] result = new int[length];
         
         for(int i=0; i<intervals.length; i++){
-            System.out.println(intervals[i][0]);
             for(int j=intervals[i][0]; j<intervals[i][1]+1; j++){
                 result[count] = arr[j];
                 count++;
