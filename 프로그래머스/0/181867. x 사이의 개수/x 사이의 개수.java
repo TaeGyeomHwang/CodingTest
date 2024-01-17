@@ -10,11 +10,11 @@ class Solution {
                 answer.add(length);
                 break;
             }
-            if(myString.charAt(i)!='x'){
-                length++;
-            }else{
+            if(myString.charAt(i)=='x'){
                 answer.add(length);
                 length = 0;
+            }else{
+                length++;
             }
         }
         
