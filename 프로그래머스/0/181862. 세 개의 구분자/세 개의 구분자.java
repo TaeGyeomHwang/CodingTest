@@ -21,7 +21,7 @@ class Solution {
         }
         result = list.stream().filter(item -> !item.equals("")).toArray(String[]::new);
 
-        if(result.length==0){
+        if(result.length==0){   //  result는 null이 아니지만 빈 배열일 수는 있다.
             result = new String[] {"EMPTY"};
             return result;
         }else{
