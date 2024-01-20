@@ -12,7 +12,7 @@ class Solution {
                 break;
             }
         }
-        
+        // return ""+ Integer.parseInt(n_str));
         return String.join("", Arrays.copyOfRange(n_str_arr, index, n_str_arr.length));
     }
 }
