@@ -1,18 +1,14 @@
-import java.util.*;
 class Solution {
     public String solution(String n_str) {
         int index = 0;
-        String[] n_str_arr = n_str.split("");
         
-        for(int i=0; i<n_str_arr.length; i++){
-            if(n_str_arr[i].equals("0")){
-                continue;
-            }else{
+        for(int i=0; i<n_str.length(); i++){
+            if(n_str.charAt(i)!='0'){
                 index = i;
                 break;
             }
         }
-        // return ""+ Integer.parseInt(n_str));
-        return String.join("", Arrays.copyOfRange(n_str_arr, index, n_str_arr.length));
+        
+        return n_str.substring(index);
     }
 }
