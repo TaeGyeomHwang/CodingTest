@@ -13,6 +13,6 @@ class Solution {
             }
         }
         
-        return String.join("",Arrays.copyOfRange(n_str_arr, index, n_str_arr.length));
+        return String.join("", Arrays.copyOfRange(n_str_arr, index, n_str_arr.length));
     }
 }
