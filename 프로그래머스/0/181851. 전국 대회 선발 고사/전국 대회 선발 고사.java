@@ -2,7 +2,6 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] rank, boolean[] attendance) {
-        int count = 0;
         Map<Integer, Integer> map = new HashMap<>();
         
         for(int i=0; i<rank.length; i++){
