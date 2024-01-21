@@ -9,8 +9,8 @@ class Solution {
         // }
         // return 0;
         
-        int intDate1 = date1[0] * 10000 + date1[1] * 100 + date1[2];
-        int intDate2 = date2[0] * 10000 + date2[1] * 100 + date2[2];
+        int intDate1 = date1[0] * 100 + date1[1] * 10 + date1[2];
+        int intDate2 = date2[0] * 100 + date2[1] * 10 + date2[2];
 
         return (intDate1 < intDate2) ? 1 : 0;
     }
