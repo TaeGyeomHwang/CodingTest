@@ -6,7 +6,7 @@ class Solution {
             System.out.println(ans);
             ans *= i;
             i++;
-        }
+        } 
         return i-2;
     }
 }
