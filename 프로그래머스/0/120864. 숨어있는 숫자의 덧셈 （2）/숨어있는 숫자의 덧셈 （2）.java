@@ -6,19 +6,14 @@ class Solution {
             if(Character.isDigit(my_string.charAt(i))){
                 sb.append(my_string.charAt(i));
             }else{
-                if(sb.toString().equals("")){
-                    continue;
+                if (sb.length() > 0) {
+                    answer += Integer.parseInt(sb.toString());
+                    sb.setLength(0);
                 }
-                answer += Integer.parseInt(sb.toString());
-                sb.setLength(0);
             }
-            if(i==my_string.length()-1){
-                if(sb.toString().equals("")){
-                    continue;
-                }
-                answer += Integer.parseInt(sb.toString());
-                sb.setLength(0);
-            }
+        } 
+        if (sb.length() > 0) {
+            answer += Integer.parseInt(sb.toString());
         }
         return answer;
     }
