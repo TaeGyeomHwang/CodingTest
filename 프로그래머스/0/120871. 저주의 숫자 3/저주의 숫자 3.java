@@ -6,7 +6,7 @@ class Solution {
             while (answer % 3 == 0 || String.valueOf(answer).contains("3")) { 
                 answer++;                  
             }
-        }
+        } 
         return answer;
     }
 }
