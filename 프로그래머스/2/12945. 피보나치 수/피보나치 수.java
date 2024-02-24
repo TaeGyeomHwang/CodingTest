@@ -1,10 +1,9 @@
 class Solution {
     public int solution(int n) {
         int[] answer = new int[n+1];
-        
+         
         for(int i=0; i<=n; i++){
-            if(i==0) answer[i]=0;
-            else if(i==1) answer[i]=1;
+            if(i<2) answer[i]=i;
             else{
                 int num = answer[i-1]+answer[i-2];
                 answer[i] = num%1234567;
