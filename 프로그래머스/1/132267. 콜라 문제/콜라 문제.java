@@ -4,7 +4,6 @@ class Solution {
         while(a<=n){
             answer += ((n/a) * b);
             n = (n/a) * b + n%a;
-            
         }
         return answer;
     }
