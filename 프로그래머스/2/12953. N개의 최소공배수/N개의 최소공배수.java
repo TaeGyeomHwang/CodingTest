@@ -1,23 +1,22 @@
 class Solution {
     public int solution(int[] arr) {
-        if (arr.length == 1) {
-            return arr[0];
+        int lcm = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            lcm = getLCM(lcm, arr[i]);
         }
-
-        int gcd = getGCD(arr[0], arr[1]);
-        int lcm = (arr[0] * arr[1]) / gcd;
-
-        for (int i = 2; i < arr.length; i++) {
-            gcd = getGCD(lcm, arr[i]);
-            lcm = (lcm * arr[i]) / gcd;
-        }
-
         return lcm;
     }
+
+    public static int getLCM(int num1, int num2) {
+        return (num1 * num2) / getGCD(num1, num2);
+    }
+
     public static int getGCD(int num1, int num2) {
-        if (num1 % num2 == 0) {
-            return num2;
+        while (num2 != 0) {
+            int temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
         }
-        return getGCD(num2, num1 % num2);
+        return num1;
     }
 }
