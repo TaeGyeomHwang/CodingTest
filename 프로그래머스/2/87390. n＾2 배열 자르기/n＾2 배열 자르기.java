@@ -9,6 +9,6 @@ class Solution {
             int value = Math.max((int) row, (int) col) + 1;
             result.add(value);
         }
-        return result.stream().mapToInt(Integer::intValue).toArray();
+        return result.stream().mapToInt(i->i).toArray();
     }
 }
