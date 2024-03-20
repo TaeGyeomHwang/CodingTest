@@ -8,9 +8,8 @@ class Solution {
         }
         Arrays.sort(arr, Collections.reverseOrder());
         for(int i=0; i<arr.length; i++){
-            if(i%m==m-1){
+            if(i%m==m-1)
                 answer += arr[i] * m;
-            }
         }
         return answer;
     }
