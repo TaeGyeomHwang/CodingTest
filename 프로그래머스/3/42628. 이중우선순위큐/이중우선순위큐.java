@@ -2,15 +2,15 @@ import java.util.*;
 class Solution {
     public int[] solution(String[] operations) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        
+         
         for(String s: operations){
             int num = Integer.parseInt(s.substring(2));
             if(s.startsWith("I")){
                 pq.add(num);
             }else if(s.startsWith("D 1")){
-                delete(pq, "max");
+                deleteMax(pq);
             }else{
-                delete(pq, "min");
+                pq.poll();
             }
         }
         
@@ -22,7 +22,7 @@ class Solution {
         }
     }
     
-    private PriorityQueue<Integer> delete(PriorityQueue<Integer> pq, String maxOrMin){
+    private PriorityQueue<Integer> deleteMax(PriorityQueue<Integer> pq){
         
         if(pq.size()==0)
             return pq;
@@ -35,10 +35,7 @@ class Solution {
         
         Collections.sort(tempList);
         
-        if(maxOrMin.equals("max"))
-            tempList.remove(tempList.size()-1);
-        else
-            tempList.remove(0);
+        tempList.remove(tempList.size()-1);
         
         for (int num : tempList) {
             pq.offer(num);
