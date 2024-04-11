@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Solution {
+    
     static class Node {
         int x, y, dist;
 
@@ -12,11 +13,11 @@ class Solution {
     }
     
     public int solution(int[][] maps) {
-         int n = maps.length;
+        int n = maps.length;
         int m = maps[0].length;
 
-        // Direction arrays to move in 4 directions
-        int[] dx = {0, 0, 1, -1};
+        // 네 방향으로 탐색하기 위한 방향 배열
+        int[] dx = {0, 0, -1, 1};
         int[] dy = {1, -1, 0, 0};
 
         Queue<Node> queue = new LinkedList<>();
@@ -27,18 +28,20 @@ class Solution {
 
         while (!queue.isEmpty()) {
             Node node = queue.poll();
+            
+            // System.out.println(node.x + " " + node.y + " " + node.dist);
 
-            // Check if we reached the opponent's camp
+            // 적 팀 진영에 도착했는지 확인
             if (node.x == n - 1 && node.y == m - 1) {
                 return node.dist;
             }
 
-            // Explore all 4 directions
+            // 네 방향 모두 탐색
             for (int i = 0; i < 4; i++) {
                 int nx = node.x + dx[i];
                 int ny = node.y + dy[i];
 
-                // Check if the next move is within bounds and not a wall and not visited
+                // 다음 이동 위치가 벽이 아니고, n * m 배열 내에 있고, 방문하지 않았는지 확인
                 if (nx >= 0 && nx < n && ny >= 0 && ny < m && maps[nx][ny] == 1 && !visited[nx][ny]) {
                     queue.offer(new Node(nx, ny, node.dist + 1));
                     visited[nx][ny] = true;
@@ -46,7 +49,7 @@ class Solution {
             }
         }
 
-        // If we cannot reach the opponent's camp
+        // 적 진영까지 도달하지 못할 경우
         return -1;
     }
 }
